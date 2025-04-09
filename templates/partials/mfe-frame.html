@@ -1,0 +1,19 @@
+<div class="mfe-container" style="--rotate: {{ .Rotate }}deg">
+  <iframe
+    id="mfe-{{ .ID }}"
+    data-mfe-id="{{ .ID }}"
+    src="{{ .URL }}"
+    class="w-full h-full border-0"
+    title="{{ .Title }}"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin allow-forms"
+  ></iframe>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const frame = document.getElementById("mfe-{{ .ID }}");
+    if (frame && window.coreShell) {
+      window.coreShell.registerMfe("{{ .ID }}", frame);
+    }
+  });
+</script>

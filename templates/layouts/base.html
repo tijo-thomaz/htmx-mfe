@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ .Title }} - TJ the Dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/output.css" />
+    <link rel="stylesheet" href="/static/css/custom.css" />
+    <link rel="stylesheet" href="/static/css/comic-theme.css" />
+
+    <!-- Three.js scripts with global THREE object -->
+    <!-- Load Three.js BEFORE your scripts that use it -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.150.1/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/loaders/GLTFLoader.min.js"></script>
+    <!-- Core scripts -->
+    <script src="/static/js/eventBus.js" defer></script>
+    <script src="/static/js/core-shell.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/static/js/gsap-animations.js" defer></script>
+    <script src="/static/js/hero-avatar.js" defer></script>
+
+    {{ block "head" . }}{{ end }}
+  </head>
+  <body class="bg-bg-main text-text-main font-comic">
+    <div class="container px-4 py-8 mx-auto">
+      {{ template "header.html" . }} {{ block "content" . }} {{ template
+      "hero.html" .}} {{ template "origin.html" .}} {{ template "arsenal.html"
+      .}} {{ template "terminal.html" .}} {{ template "contact.html" .}} {{ end
+      }} {{ template "footer.html" . }}
+    </div>
+  </body>
+</html>

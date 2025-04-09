@@ -1,0 +1,39 @@
+<section id="origin" class="py-20 bg-yellow-100">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-12 text-center reveal-text">
+      Origin Story
+    </h2>
+
+    <div class="timeline space-y-12 max-w-3xl mx-auto">
+      {{ range .Timeline }}
+      <div class="timeline-item flex reveal-item">
+        <div
+          class="timeline-marker w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-bold"
+        >
+          {{ .Year }}
+        </div>
+        <div class="timeline-content ml-6 bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-bold">{{ .Title }}</h3>
+          <p class="text-gray-600">{{ .Subtitle }}</p>
+          <p class="mt-2">{{ .Description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="mt-12 text-center">
+      <button
+        hx-get="/fragment/devcapsule"
+        hx-target="#capsule-zone"
+        hx-swap="beforeend"
+        class="bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition"
+      >
+        ⚡ Load Experience Capsule
+      </button>
+      <div
+        id="capsule-zone"
+        class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto"
+      ></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+{
+  "name": "htmx-mfe",
+  "version": "1.0.0",
+  "description": "Tijo's Comic Portfolio with MFEs",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "go run main.go"
+  },
+  "keywords": [
+    "htmx",
+    "go",
+    "typescript",
+    "mfe"
+  ],
+  "author": "Tijo Thomas",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/three": "^0.150.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.2"
+  },
+  "dependencies": {
+    "three": "^0.150.1"
+  }
+}

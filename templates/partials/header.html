@@ -1,0 +1,49 @@
+<header class="sticky top-0 z-50 bg-yellow-200 shadow-sm">
+  <div
+    class="flex items-center justify-between px-4 py-4 mx-auto max-w-7xl sm:px-6 lg:px-8"
+  >
+    <!-- Brand -->
+    <div class="text-xl font-extrabold tracking-tight text-gray-800">
+      <a href="#hero">Tijo ⚡</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="lg:hidden">
+      <button id="navToggle" class="text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Links -->
+    <nav id="navMenu" class="hidden space-x-6 text-lg font-semibold lg:flex">
+      <a href="#hero" class="hover:text-accent">Home</a>
+      <a href="#origin" class="hover:text-accent">Origin</a>
+      <a href="#arsenal" class="hover:text-accent">Power Arsenal</a>
+      <a href="#contact" class="hover:text-accent">Summon Me</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="navDropdown" class="hidden px-6 pb-4 lg:hidden">
+    <a href="#hero" class="block py-2 hover:text-accent">Home</a>
+    <a href="#origin" class="block py-2 hover:text-accent">Origin</a>
+    <a href="#arsenal" class="block py-2 hover:text-accent">Power Arsenal</a>
+    <a href="#contact" class="block py-2 hover:text-accent">Summon Me</a>
+  </div>
+
+  <!-- Comic border -->
+  <div class="border-b-4 border-black"></div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("navToggle");
+    const menu = document.getElementById("navDropdown");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>

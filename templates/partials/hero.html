@@ -1,0 +1,35 @@
+<section id="hero" class="py-12">
+  <div class="container mx-auto">
+    <div class="flex flex-col items-center gap-8 md:flex-row">
+      <div class="w-full md:w-1/2">
+        <h1 class="mb-4 text-5xl font-bold">{{ .Title }}</h1>
+        <div class="mb-6 speech-bubble">
+          <p class="text-xl">
+            Hi there! I'm
+            <span class="font-bold text-accent">Tijo Thomas</span>, a Senior
+            Frontend Engineer with a passion for building delightful user
+            experiences.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <button class="btn-comic" style="--rotate: -2deg">
+            <span>View Projects</span>
+          </button>
+          <button class="btn-comic" style="--rotate: 2deg">
+            <span>Contact Me</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero 3D Avatar -->
+      <div
+        hx-get="/fragment/hero-avatar"
+        hx-trigger="load"
+        hx-swap="outerHTML"
+        class="w-full md:w-1/2 h-[400px] flex items-center justify-center"
+      >
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+  </div>
+</section>

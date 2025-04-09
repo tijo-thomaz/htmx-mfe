@@ -1,0 +1,18 @@
+{{ define "header.html" }}
+<header
+  class="sticky top-0 z-50 p-6 text-xl font-bold text-center bg-yellow-200"
+>
+  <nav class="flex justify-center space-x-8">
+    <a href="#hero" class="hover:text-accent">Home</a>
+    <a href="#origin" class="hover:text-accent">Origin</a>
+    <a href="#arsenal" class="hover:text-accent">Power Arsenal</a>
+    <a href="#contact" class="hover:text-accent">Summon Me</a>
+  </nav>
+</header>
+{{ end }} {{ define "footer.html" }}
+<footer class="py-8 text-center bg-yellow-200">
+  <div class="container px-6 mx-auto">
+    <p class="text-gray-800">© {{ .Year }} TJ the Dev. All rights reserved.</p>
+  </div>
+</footer>
+{{ end }}

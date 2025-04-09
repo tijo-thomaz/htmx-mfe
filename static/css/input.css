@@ -1,0 +1,49 @@
+/* Base Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles that will be processed by Tailwind */
+@layer base {
+  body {
+    @apply bg-bg-main text-text-main;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  a {
+    @apply text-accent hover:underline;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 font-bold text-gray-900 transition-transform transform border-gray-900 rounded-lg bg-primary border-3 shadow-comic hover:scale-105 active:translate-y-1;
+  }
+  
+  .comic-card {
+    @apply p-6 transition-all duration-300 transform border-4 border-gray-900 rounded-lg bg-bg-panel shadow-comic;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .rotate-random-1 {
+    transform: rotate(1deg);
+  }
+  
+  .rotate-random-2 {
+    transform: rotate(-1deg);
+  }
+  
+  .rotate-random-3 {
+    transform: rotate(2deg);
+  }
+  
+  .rotate-random-4 {
+    transform: rotate(-2deg);
+  }
+}

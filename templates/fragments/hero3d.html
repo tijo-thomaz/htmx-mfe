@@ -1,0 +1,12 @@
+<div
+  id="hero-avatar-container"
+  class="w-full md:w-1/2 h-[400px] rounded-xl overflow-hidden shadow-xl border-4 border-gray-900 transform rotate-2"
+>
+  <!-- The 3D hero will be rendered here -->
+</div>
+<script src="/static/js/hero3d.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    new Hero3D("hero-avatar-container");
+  });
+</script>

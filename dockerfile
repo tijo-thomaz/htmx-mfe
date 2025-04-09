@@ -1,33 +1,33 @@
-# Use an official Go image
-FROM golang:1.24.1-alpine AS builder
+FROM golang:1.19-alpine AS builder
 
 WORKDIR /app
 
-# Copy go.mod and download dependencies
+# Copy go mod and sum files
 COPY go.mod go.sum ./
+
+# Download dependencies
 RUN go mod download
 
-# Copy the rest of the application
+# Copy source code
 COPY . .
 
-# Build the Go app
-RUN go build -o htmx-mfe
+# Build the application
+RUN CGO_ENABLED=0 GOOS=linux go build -o /app/htmx-mfe
 
-# Create a minimal final image
-FROM alpine:latest
-WORKDIR /root/
+# Final stage
+FROM alpine:3.16
 
-# Copy the built binary from the builder stage
-COPY --from=builder /app/htmx-mfe .
+WORKDIR /app
 
-# Set execution permissions (fixes "Permission Denied" errors)
-RUN chmod +x /root/htmx-mfe
+# Copy the binary from builder
+COPY --from=builder /app/htmx-mfe /app/htmx-mfe
 
-# Expose port 8080 for Cloud Run
+# Copy static files and templates
+COPY --from=builder /app/static /app/static
+COPY --from=builder /app/templates /app/templates
+
+# Expose port
 EXPOSE 8080
 
-# Set PORT environment variable (Cloud Run will override this)
-ENV PORT=8080
-
 # Run the application
-CMD ["./htmx-mfe"]
+CMD ["/app/htmx-mfe"]

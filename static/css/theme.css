@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* Comic Style Portfolio Theme */
+
+:root {
+    --primary: #facc15;
+    --accent: #2563eb;
+    --bg-main: #fffbea;
+    --bg-panel: #fef08a;
+    --text-main: #1f2937;
+    --text-accent: #0ea5e9;
+    --border-panel: #e5e7eb;
+    --shadow-color: #1f2937;
+    --comic-radius: 0.75rem;
+    --comic-font: 'Comic Neue', cursive;
+  }
+  
+  /* Apply theme */
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--comic-font);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: var(--primary);
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--text-main);
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: var(--comic-font);
+    color: var(--text-accent);
+  }
+  
+  .button {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #1e40af;
+    transform: scale(1.05);
+  }
+  
+  .panel {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-panel);
+    border-radius: var(--comic-radius);
+    box-shadow: 4px 4px 0 var(--shadow-color);
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 800px;
+  }
+  
+  .dev-capsule {
+    background-color: var(--bg-panel);
+    color: var(--text-main);
+    border: 2px solid var(--border-panel);
+    border-radius: var(--comic-radius);
+    box-shadow: 3px 3px 0 var(--shadow-color);
+    padding: 1rem;
+    margin: 1rem 0;
+    transition: transform 0.2s ease;
+  }
+  
+  .dev-capsule:hover {
+    transform: translateY(-5px);
+  }
+  
+  .text-accent {
+    color: var(--text-accent);
+  }
+  
+  .caption {
+    font-size: 0.875rem;
+    color: var(--text-accent);
+    margin-top: 0.25rem;
+  }
+  

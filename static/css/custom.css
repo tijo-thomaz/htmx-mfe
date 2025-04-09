@@ -1,0 +1,247 @@
+/* Additional custom styles beyond Tailwind */
+
+/* Blinking cursor for terminal */
+.blink {
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* HTMX loading indicator */
+.htmx-indicator {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.htmx-request .htmx-indicator {
+  opacity: 1;
+}
+
+.htmx-request.htmx-indicator {
+  opacity: 1;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero section animations */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-container {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.avatar-container:hover {
+  transform: scale(1.05);
+}
+
+.scroll-hint {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Terminal styling */
+.terminal-placeholder {
+  position: relative;
+  overflow: hidden;
+  font-family: monospace;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: #0a0a0a;
+}
+
+.terminal-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: #333;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.terminal-placeholder::after {
+  content: "● ● ●";
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Comic-style timeline */
+.shadow-comic {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.8);
+}
+
+.timeline-panel {
+  position: relative;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.timeline-panel:hover {
+  transform: scale(1.02) rotate(0deg) !important;
+}
+
+.speech-bubble {
+  position: relative;
+}
+
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #f3f4f6;
+  border-left: 2px solid #111827;
+  border-top: 2px solid #111827;
+  transform: rotate(45deg);
+}
+
+/* Comic dots animation */
+.comic-dots span {
+  animation: pulse 1.5s infinite;
+}
+
+.comic-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.comic-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* Experience capsule animations */
+#capsule-zone .project-card {
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+#capsule-zone .project-card:hover {
+  transform: translateY(-10px) rotate(0deg) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Tech stack pills */
+.tech-stack span {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-stack span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Hero signal pulse animation */
+.hero-signal {
+  position: relative;
+}
+
+.hero-signal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background-color: #2563eb;
+  opacity: 0.3;
+  z-index: -1;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hero avatar container styling */
+#hero-avatar {
+  position: relative;
+  background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#hero-avatar:hover {
+  transform: scale(1.02) rotate(1deg);
+}
+
+#hero-avatar canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Add a comic-style border */
+#hero-avatar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid #1f2937;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Add some comic-style dots in the corner */
+#hero-avatar::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 20px;
+  background-image: radial-gradient(circle, #1f2937 3px, transparent 3px);
+  background-size: 15px 15px;
+  background-repeat: repeat;
+  z-index: 11;
+}
